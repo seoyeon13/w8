@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>External Express</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+<style type="text/css">
+	@font-face {
+    font-family: 'Pretendard-Black';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;}
+	@font-face {
+    font-family: 'Pretendard-ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;}
+	@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;}
+	@font-face {
+    font-family: 'Pretendard-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;}
+	@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;}
+    @font-face {
+    font-family: 'Pretendard-Light';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;}
+    @font-face {
+    font-family: 'Pretendard-ExtraLight';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;}
+	@font-face {
+    font-family: 'Pretendard-Thin';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;}
+    .orbit-regular {
+	font-family: "Orbit", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	}
+
+
+	html {font-family: 'Pretendard-Light';
+		background: #3D3D3D; color: white;
+		scroll-behavior: smooth;
+	font-size: 1.2rem; line-height: 1.6;word-break: keep-all;}
+    li {
+    font-family: "Orbit";
+    font-weight: 400;
+    font-style: normal;
+	font-size: 1.3rem;}
+    body,nav,h1,h2,h3,h4,h5,p,ul,li,a{margin: 0;padding: 0}
+    	nav{padding: 5px 0px 5px 0px; background: #3D3D3D; 
+    		box-shadow: 0px 3px 5px 0px #282828;}
+    		.nav{position: fixed;width: 100%;z-index: 100;}
+		footer{padding: 80px 0px 70px 0px;
+			font-size: 0.9rem;
+			font-family: 'Pretendard-Thin'; line-height: 1.4;}
+
+		a{display:block;color: white;text-decoration: none;}
+
+		section{padding: 170px 100px;}
+			.ufo{width: 800px; position: absolute;top: 550px;left: 70px;z-index: -11;}
+			@keyframes move {from {opacity: 1;}
+				to {top: 700px;left: 250px; opacity:0;}}
+			.ufo2{width: 190px;position: absolute;top: 910px;left: 335px;z-index: -10;animation: move 3s infinite;}
+
+/*		h1: 소제목, h2: 맨 위 큰글씨, h3: 상품명, h4: 가격, h5: 본문 강조*/
+		h1{font-family: "Orbit";font-weight: 400;
+			font-size: 2rem;color: #00FF1A;
+			text-align: center;padding-bottom: 100px;}
+		h2{font-family: 'Pretendard-ExtraBold'; font-size: 2.8rem;
+			padding: 20px 0px 120px 0px;text-align: center;color: black;}
+			.ell1{width: 1300px;position: absolute;top: 65px;left: -100px;z-index: -10;}
+		h3{font-family: 'Pretendard-Medium';font-weight: 500;
+			height: 60px;width: 322px;margin: auto; 
+			font-size: 1.4rem;color: black;text-align: center;}
+		h4{padding: 0px 30px 0px 30px;
+			font-family: 'Pretendard-Bold'; font-size: 1.2rem;color: white;
+			text-decoration: underline;}
+		h5{font-size: 1.6rem; line-height: 1.4;
+			padding: 30px 0px;word-break: keep-all;
+			font-family: 'Pretendard-SemiBold'}
+			.pen{text-shadow: 4px 2px black;display: inline-block;}
+
+		p{padding: 15px 0px;}
+			.center{width: 450px;text-align: center;margin: auto;}
+			.right{width: 500px;text-align: right;padding-left: 600px;}
+			.left{width: 500px;text-align: left;}
+
+	.wrap{width: 1100px;margin: auto;position: relative;}
+    .flex{display: flex;justify-content: space-between;}
+    .menu{width: 700px;padding: 20px 0px 30px 0px}
+		.menu li{list-style-type: none;}
+		a:hover{color: #00FF1A;}
+	.logo{padding: 5px 0px;}
+		.logo img{width: 180px}
+
+	.box1{width: 500px;height: 400px;border: 2px solid #00FF1A;
+		position: relative; z-index: -5;
+		background: white;box-shadow: 0px 0px 12px 0px #00FF1A;
+		border-radius: 20px;text-align: center;overflow: hidden;}
+		.img1{height: 400px;position: relative;}
+
+	.fl1{padding: 70px 0px;}
+	.ell2{width: 300px;z-index: -10;position: relative;top: -58px;}
+	.left1{width: 500px;text-align: left;justify-content: left;
+		margin-left: 80px;}
+
+		.rank1{width: 300px;position: absolute;top: 96px;left: -130px;
+			z-index: -4;
+			animation: rotate 1s infinite alternate;}
+		.rank_1{position: absolute;top: 176px;left: -13px;}
+		@keyframes rotate {to {transform: rotate(150deg);}}
+				
+		.rank2{width: 300px;position: absolute;top: 973px;right: -139px;
+			z-index: -4;
+			animation: rotate 1s infinite alternate;}
+		.rank_2{position: absolute;top: 1060px;right: -24px;}
+		.rank3{width: 300px;position: absolute;top: 1863px;left: -138px;
+			z-index: -4;
+			animation: rotate 1s infinite alternate;}
+		.rank_3{position: absolute;top: 1951px;left: -26px;}
+
+	.box2{width: 250px;height: 110px;border: 2px solid #00FF1A;
+		padding: 0px 20px 40px 20px;margin-right: 30px;
+		background: #316436;border-radius: 20px;text-align: left;}
+	.review{display: flex;justify-content: space-between; 
+		width: 1100px;padding-bottom: 130px;
+		overflow: scroll;overflow: auto;white-space: nowrap;}
+
+	.box3{width: 700px;height: 400px;border: 2px solid #00FF1A;
+		position: relative; margin: auto;
+		background: white;box-shadow: 0px 0px 12px 0px #00FF1A;
+		border-radius: 20px;text-align: center;overflow: hidden;z-index: -2;}
+	.img3{height: 400px;position: relative;}
+	.ell3{width: 400px;position: relative;top: -70px;left: 8px;z-index: -1;}
+	.back1{width: 1350px;position: absolute;
+		top: 55px;left: -115px;z-index: -10;}
+
+	.ell4{width: 340px;z-index: -8;position: relative;top: -60px;}
+	.box4{width: 340px;height: 300px;border: 2px solid #00FF1A;
+		position: relative; z-index: -10;
+		background: white;box-shadow: 0px 0px 12px 0px #00FF1A;
+		border-radius: 20px;text-align: center;overflow: hidden;}
+	.img4{height: 300px;position: relative;}
+	.left4{width: 330px;text-align: left;}
+	.center4{width: 280px;text-align: center;}
+
+	.green-txt{color: #00FF1A;display: inline-block;}
+	.nrb-txt{font-family: "Orbit";display: inline-block;}
+	.bold-txt{font-family: 'Pretendard-Bold';display: inline-block;}
+
+	.bk-bg{background: black;}
+</style>
+</head>
+<body>
+	<div class="nav">
+	<nav>
+		<div class="wrap flex">
+			<div class="logo">
+				<img src="img/logo.png">
+			</div>
+			<ul class="menu flex">
+				<li><a href="#1">ABOUT</a></li>
+				<li><a href="#2">BEST</a></li>
+				<li><a href="#3">NEW</a></li>
+				<li><a href="#4">SALE</a></li>
+				<li><a href="#5">MY PAGE</a></li>
+			</ul>
+		</div>
+	</nav>
+	</div>
+	<section id="1">
+		<div class="wrap">
+			<h1>ABOUT</h1>
+			<h2>
+				“외계인 침공시 키 큰 사람이 먼저 잡아먹힌다”
+			</h2>
+			<img src="img/ellipse1.png" class="ell1">
+			<p class="center">외계인 등장 초창기였던 2037년 발표된 논문에서 시작된 외계인의 ‘장신 발견용이설'은 10여 년이 지난 현재, 거의 사실로 받아들여지고 있습니다.<br><br>지구 밖에서 침공해오는 외계인의 시선으로 봤을 때, 그들은 하늘에서 우리를 내려다 보기 때문에 마치 높은 곳에서 번개를 맞듯 키가 더 큰 사람이 눈에 띄어 더 빨리 잡아먹힐 가능성이 높아진다는 것이 가설의 요지이죠. </p>
+			<p class="right">현대를 사는 여러분은 무리에서 키가 큰 사람들이 먼저 잡혀갔다는 기사를 여러번 접하셨을 겁니다. 특히나 어릴 적부터 키가 컸다면 주변의 걱정이 끊이지 않았겠죠! <br>이러한 위험에 처한 키 큰 여러분을 위해,<br>당신의 걱정을 해소할</p><h5 class="right">키 큰 사람 전문 쇼핑몰.</h5>
+			<h5 class="right green-txt">External Express에서 모든 걸 마련하세요!</h5>
+			<p class="right">키를 작게 만드는 회피법부터, 외계인을 직접 퇴치하거나 그들과 대화로 해결하는 방법까지 모두 준비된 이곳에서 외계 침공의 두려움을 해소할 수 있습니다!</p>
+		</div>
+		<img src="img/ufo1.png" class="ufo">
+		<img src="img/ufo2.png" class="ufo2">
+	</section>
+	<section id="2">
+		<div class="wrap">
+			<h1>BEST ITEM</h1>
+			<div class="flex fl1">
+				<div>
+					<div>
+					<img src="img/boom1.png" class="rank1">
+					<h2 class="rank_1">01</h2>
+					</div>
+				<div class="box1">
+		            <img src="img/1_glass.gif" class="img1">
+	        	</div>
+				</div>
+				<div>
+					<div class="flex left1">
+						<h3>
+							위장 선글라스
+							<img src="img/ellipse2.png" class="ell2">
+						</h3>
+						<h4>₩ 5,000</h4>
+					</div>
+						<h5 class="left1 pen">이것만 있으면 나도 외계인?!</h5> 
+						<p class="left1">이 선글라스는 마치 외계인의 동료가 된 듯한 얼굴로 보이게 해줍니다. 약 75%의 확률로 그들은 착용자를 먼저 침공해온 외계 동료라 생각하고 큰 반응을 하지 않습니다.
+						<div class="green-txt left1">*외계인이 거의 없는 지역에서는 오히려 말을 걸어올 수 있으니 구입에 유의하시기 바랍니다.</div>
+						</p>
+				</div>
+			</div>
+			<h3 class="green-txt left">REVIEWS</h3>
+			<div class="review">
+				<div class="box2">
+					<p><div class="green-txt">★★★★☆</div><br>sks****<br>강력 추천합니다!</p>
+				</div>
+				<div class="box2">
+					<p><div class="green-txt">★★★★★</div><br>ilk****<br>와 진짜 못알아보네요</p>
+				</div>
+				<div class="box2">
+					<p><div class="green-txt">★★★★☆</div><br>dhu****<br>이건 좀 쓸만한듯...</p>
+				</div>
+				<div class="box2">
+					<p><div class="green-txt">★☆☆☆☆</div><br>pqp****<br>؄۝p;ẻ&@৮ৈu$忊!?\={</p>
+				</div>
+			</div>
+			<div class="flex fl1">
+				<div>
+					<div class="flex">
+						<h3>
+							외계어 회화사전 초급
+							<img src="img/ellipse2.png" class="ell2">
+						</h3>
+						<h4>₩ 12,000</h4>
+					</div>
+					<h5 class="left pen">대화로 모든 걸 해결할 수 있죠!</h5>
+					<p class="left">아무리 외계인이라도 이성적으로 의사소통을 이어가다보면 분명 잡아먹을 필요가 없다는 합의점을 찾게 될 것입니다. 우수한 연구원들의 활발한 연구 활동으로, 매해 최신 개정판을 출판합니다.<br>초급편에는 간단한 인삿말, 설득하는 말하기 등이 수록되어 있습니다.
+					</p>
+				</div>
+				<div>					
+					<div>
+					<img src="img/boom1.png" class="rank2">
+					<h2 class="rank_2">02</h2>
+					</div>
+				<div class="box1"><img src="img/3_book.gif" class="img1"></div>
+				</div>
+			</div>
+			<h3 class="green-txt left">REVIEWS</h3>
+			<div class="review">
+				<div class="box2">
+					<p><div class="green-txt">★★★★☆</div><br>zkf****<br>조금 어렵지만 효과는 있습니다</p>
+				</div>
+				<div class="box2">
+					<p><div class="green-txt">★★★☆☆</div><br>wio****<br>너무 어려워요 초급 아닌듯</p>
+				</div>
+				<div class="box2">
+					<p><div class="green-txt">★★★★☆</div><br>ilk****<br>살다살다 외계어를 배우다니</p>
+				</div>
+				<div class="box2">
+					<p><div class="green-txt">★☆☆☆☆</div><br>las****<br>이해가 안됨</p>
+				</div>
+			</div>
+			<div class="flex fl1">
+				<div>
+					<div>
+					<img src="img/boom1.png" class="rank3">
+					<h2 class="rank_3">03</h2>
+					</div>
+				<div class="box1"><img src="img/2_chair.gif" class="img1"></div>
+				</div>
+				<div>
+					<div class="flex left1">
+						<h3>
+							지팡이 의자
+							<img src="img/ellipse2.png" class="ell2">
+						</h3>
+						<h4>₩ 150,000</h4>
+					</div>
+						<h5 class="left1 pen">이제 어디서나 앉을 수 있다!</h5>
+						<p class="left1">
+						외계 침공의 시대에 노려지기 쉬운 키 큰 사람들은 공포에 떨며 무릎과 허리를 굽히고 다니기 마련입니다. 하지만 그렇게 매시간 굽힌 채로 돌아다닐 경우 허벅지, 허리 등 곳곳의 관절과 근육이 고통을 호소합니다. <br>그런 키 큰 여러분을 위해, 걸어가다 어디서든 앉을 수 있는 지팡이형 의자입니다.
+						</p>
+				</div>
+			</div>
+			<h3 class="green-txt left">REVIEWS</h3>
+			<div class="review">
+				<div class="box2">
+					<p><div class="green-txt">★★★★☆</div><br>zkf****<br>이제 좀 살 것 같네요</p>
+				</div>
+				<div class="box2">
+					<p><div class="green-txt">★★★★☆</div><br>wio****<br>지팡이로도 쓸 수 있어서 좋음</p>
+				</div>
+				<div class="box2">
+					<p><div class="green-txt">★☆☆☆☆</div><br>ilk****<br>별로예요...</p>
+				</div>
+				<div class="box2">
+					<p><div class="green-txt">★★☆☆☆</div><br>las****<br>좀 더 작은 버전이 나오면 좋겠다</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="3">
+		<div class="wrap">
+			<h1>NEW!! 신상품</h1>
+				<h3 class="center">외계빔 방어용 우양산
+				<img src="img/ellipse2.png" class="ell3">
+				</h3>
+			<div class="box3"><img src="img/umb.png" class="img3"></div>
+			<h4 class="center">₩ 34,000</h4>
+			<p class="center">당신을 UFO로 끌고가려는 외계빔을 막아줄 수 있는 우양산이 새로 출시되었습니다. 옵션에서 방어 대신 반사 기능을 추가할 수 있습니다.</p>
+			<img src="img/new.png" class="back1">
+		</div>
+	</section>
+	<section id="4">
+		<div class="wrap">
+			<h1>특가 SALE</h1>
+			<div class="flex">
+				<div>
+					<h3>
+						‘지구에서 나가라'머리띠
+						<img src="img/ellipse2.png" class="ell4">
+					</h3>
+					<div class="box4"><img src="img/band.png" class="img4"></div>
+					<h4 class="center4">₩ 4,000</h4>
+					<p class="left4">
+						키가 크다는 것은 외계인에게 노려지기도 쉽지만 그만큼 눈에 잘 띈다는 뜻이죠. 당신의 의사를 외계인에게 적극 표명하세요! 오래 착용해도 피부에 자극이 가지 않고, 땀을 잘 흡수하는 기능성 소재로 제작되었습니다. 데일리 아이템으로도 활용 가능해요.
+					</p>
+				</div>
+				<div>
+					<h3>
+						돌멩이
+						<img src="img/ellipse2.png" class="ell4">
+					</h3>
+					<div class="box4"><img src="img/stone.png" class="img4"></div>
+					<h4 class="center4">₩ 200</h4>
+					<p class="left4">
+						투척용 돌멩이입니다. 근접해온 외계인을 향해 힘껏 던져 퇴치할 수 있습니다. 휴대하기 좋게 작고 가볍지만 모난 돌멩이를 엄선하여 보내드립니다.<div class="green-txt left4">*빠르게 퇴치하지 못하면 역효과일 수 있으니 주의 바랍니다.</div>
+					</p>
+				</div>
+				<div>
+					<h3>
+						하이힐
+						<img src="img/ellipse2.png" class="ell4">
+					</h3>
+					<div class="box4"><img src="img/heel.jpg" class="img4"></div>
+					<h4 class="center4">₩ 9,900</h4>
+					<p class="left4">
+						키 큰 사람의 다리를 자를 수는 없으니 이제 모두의 키가 커질 때입니다. 주변 사람들에게 하이힐을 신겨서 위험도를 낮춥니다. 디자인과 굽 모양은 선택 가능합니다.<div class="green-txt left4">*100개부터 주문 가능한 대량구매 상품입니다.<br>*’주변 사람에게 신기기' 옵션은 별도구매입니다.</div>
+					</p>
+				</div>
+			</div>
+	</section>
+</body>
+<div class="bk-bg">
+<footer class="flex wrap">
+	<div class="nrb-txt">
+		<div class="green-txt">External Express</div> © 2024 김서연 All rights reserved.<br>
+		sowyi3713@gmail.com
+	</div>
+	<div>
+		<div class="nrb-txt">Image source</div>
+		<br>
+		<a href="https://www.freepik.com/free-photo/foot-heels-shoe-girl-women_1096797.htm#fromView=search&page=1&position=22&uuid=4d189d70-e762-49d7-95de-95b073be36db" target="_new">Image by mrsiraphol on Freepik</a>
+		<a href="https://www.11st.co.kr/products/2703974763?&trTypeCd=PW74&trCtgrNo=585021&checkCtlgPrd=true" target="_new">Image by 노인 지팡이 의자 타다체어 on 11번가</a>
+		<a href="https://www.11st.co.kr/products/5830079231" target="_new">Image by 외계인 선글라스 인싸템 웃긴 안경 on 11번가</a>
+		<a href="https://www.temu.com/kr/%EC%8A%A4%EC%9B%A8%ED%8A%B8-%ED%9D%A1%EC%88%98-%EC%88%98%EA%B1%B4-%ED%97%A4%EB%93%9C%EB%B0%B4%EB%93%9C-%ED%8C%A8%EC%85%98-%ED%94%BC%ED%8A%B8%EB%8B%88%EC%8A%A4-%EC%9A%94%EA%B0%80-%ED%97%A4%EB%93%9C%EB%B0%B4%EB%93%9C-%EC%9D%B4%EB%A7%88-%EB%B3%B4%ED%98%B8%EC%9E%90-%EC%95%BC%EC%99%B8-%EC%8A%A4%ED%8F%AC%EC%B8%A0%EC%9A%A9-g-601099511902725.html?top_gallery_url=https%3A%2F%2Fimg.kwcdn.com%2Fproduct%2F1d14c6c12bc%2F4c33319c-2205-4381-9dd1-4ccacb38dc38_800x800.jpeg&spec_gallery_id=5860001&_x_vst_scene=adg&_x_ads_sub_channel=shopping&_x_ns_prz_type=-1&_x_ns_sku_id=17592270844399&_x_ads_channel=google&_x_gmc_account=5072611099&_x_login_type=Google&_x_ads_account=9704659649&_x_ads_set=20496336128&_x_ads_id=155723132311&_x_ads_creative_id=671443772376&_x_ns_source=g&_x_ns_gclid=CjwKCAjww_iwBhApEiwAuG6ccPjtaYzGXac_dVDcd2g5D2BoTvwWie0P71b0Ak8CYqPJIO_lDGcjDxoC6MAQAvD_BwE&_x_ns_placement=&_x_ns_match_type=&_x_ns_ad_position=&_x_ns_product_id=17592270844399&_x_ns_target=&_x_ns_devicemodel=&_x_ns_wbraid=Cj8KCQjwoPOwBhDOARIuAALINI626ABCHCZ3BS7s9cV1ztyVid92b-_9leymdoiMge7rKTIjFR713mO4vBoCt9c&_x_ns_gbraid=0AAAAAo4mICFmGD3-R8idL5l51wGTuPNtj&_x_ns_targetid=pla-679310116743&refer_page_name=kuiper&refer_page_id=13554_1713264121559_iwysif9bax&refer_page_sn=13554&_x_sessn_id=8pfuue2qq5&is_back=1" target="_new">Image by 패션 스웨트 흡수 헤드밴드 on TEMU</a>
+	</div>
+</footer>
+</div>
+</html>
